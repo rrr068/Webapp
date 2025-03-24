@@ -1,0 +1,49 @@
+# Node.js (frontend) の依存関係
+/frontend/node_modules/
+
+# Next.js (frontend) のビルド出力
+/frontend/.next/
+/frontend/out/
+
+# ログファイル
+*.log
+
+# macOS 固有のファイル
+.DS_Store
+
+# 環境設定ファイル
+/.env
+/.env.local
+/.env.development.local
+/.env.test.local
+/.env.production.local
+
+# Rails (backend) の依存関係
+/backend/vendor/bundle/
+/backend/node_modules/
+
+# Rails (backend) のビルド・ログ・tmp ファイル
+/backend/log/*
+/backend/tmp/*
+/backend/db/*.sqlite3
+/backend/db/*.sqlite3-journal
+
+# Rails (backend) のデータベース関連ファイル
+/backend/db/*.sqlite3
+/backend/db/*.sqlite3-journal
+
+# Rails (backend) のマスターキー
+/backend/config/master.key
+
+# Rails (backend) のデフォルト設定ファイル
+/backend/config/credentials.yml.enc
+
+# IDE やエディタ固有の設定ファイル
+/.idea/
+/.vscode/
+/*.sublime-workspace
+/*.sublime-project
+
+# Docker 関連の設定ファイル（場合によっては無視する）
+docker-compose.override.yml
+Dockerfile.*
