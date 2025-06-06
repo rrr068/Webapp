@@ -8,3 +8,11 @@ import { Star, Article, PersonAdd } from '@mui/icons-material';
 import { Button } from '@mui/material';
 import { UserProfile } from '../../../types/UserProfile';
 import { Axios } from 'axios';
+
+const UserDetail = () => {
+  return (
+    <>
+      Userの詳細画面
+    </>
+  )
+}

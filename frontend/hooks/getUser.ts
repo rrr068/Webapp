@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export const getUser = () => {
-  const [userId, setUserId] = useState<{ id: Number, name: string } | null>(null)
+  const [userId, setUserId] = useState<{ id: number, name: string } | null>(null)
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -20,7 +20,7 @@ export const getUser = () => {
         console.error("ユーザー情報の取得に失敗しました", error);
       }
     };
-
     fetchUser();
   }, []);
+  return userId
 }

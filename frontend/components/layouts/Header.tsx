@@ -20,7 +20,7 @@ const isLoggedIn = true
 const Header: React.FC = () => {
   const router = useRouter()
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const user = useUser()
+  const user = getUser()
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
