@@ -7,12 +7,17 @@ import { Card, CardContent, Typography, Box } from '@mui/material';
 import { Star, Article, PersonAdd } from '@mui/icons-material';
 import { Button } from '@mui/material';
 import { UserProfile } from '../../../types/UserProfile';
-import { Axios } from 'axios';
+import axios from 'axios';
+import { useUser } from "../../../contexts/UserContext"
 
 const UserDetail = () => {
+  const { user } = useUser()
   return (
     <>
-      Userの詳細画面
+      {user.id}
+      {user.name}
     </>
   )
 }
+
+export default UserDetail

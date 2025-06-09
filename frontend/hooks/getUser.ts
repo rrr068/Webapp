@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export const getUser = () => {
+export const useUser = () => {
   const [userId, setUserId] = useState<{ id: number, name: string } | null>(null)
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`/api/users/get_user_id`, {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/users/get_user_id`, {
           headers: {
             "access-token": localStorage.getItem("access-token") || "",
             client: localStorage.getItem("client") || "",

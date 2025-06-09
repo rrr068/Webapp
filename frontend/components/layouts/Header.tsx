@@ -12,15 +12,12 @@ import MenuIcon from "@mui/icons-material/Menu"
 import Menu from "@mui/material/Menu"
 import MenuItem from "@mui/material/MenuItem"
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined'
-import { getUser } from "../../hooks/getUser";
-
-// ユーザーのログイン状態を管理する仮のフラグ
-const isLoggedIn = true
+import { useUser } from "../../contexts/UserContext"
 
 const Header: React.FC = () => {
   const router = useRouter()
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const user = getUser()
+  const { user } = useUser()
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -43,10 +40,10 @@ const Header: React.FC = () => {
       </div>
 
       <div className="flex items-center space-x-4">
-        {!isLoggedIn ? (
+        {!user ? (
           <>
-            <Button color="inherit" className="text-white">サインアップ</Button>
-            <Button color="inherit" className="text-white">ログイン</Button>
+            <Button color="inherit" className="text-white" onClick={() => router.push("/sign_up")}>サインアップ</Button>
+            <Button color="inherit" className="text-white" onClick={() => router.push("/login")}>ログイン</Button>
           </>
         ) : (
           <>
