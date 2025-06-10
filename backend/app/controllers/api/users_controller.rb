@@ -1,8 +1,15 @@
 class Api::UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :set_user_by_token
 
-  def get_user_id
-    user = current_user
-    render json: user.as_json(only: [:id, :name])
+  def resource_name
+    :user
+  end
+
+  def get_user
+    if current_api_user
+      render json: current_api_user.as_json(only: [:id, :name])
+    else
+      render json: { error: '認証が必要です' }, status: :unauthorized
+    end
   end
 end

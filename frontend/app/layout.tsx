@@ -2,6 +2,7 @@
 
 import "./globals.css";
 import Header from "../components/layouts/Header";
+import { UserProvider } from "../contexts/UserContext"
 
 export default function RootLayout({
   children,
@@ -11,8 +12,10 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <Header />
-        {children}
+        <UserProvider>
+          <Header />
+          {children}
+        </UserProvider>
       </body>
     </html>
   );
