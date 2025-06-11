@@ -7,14 +7,18 @@ Rails.application.routes.draw do
 
   namespace :api do
     mount_devise_token_auth_for 'User', at: 'auth', controllers: {
-      registrations: 'api/registrations'
+      registrations: 'api/registrations',
+      sessions: 'api/sessions'
     }
     namespace :current_user do
       resource :article, only: [:index, :create, :update]
     end
-    resources :users, only: [] do
+    resources :users, only: [:show, :update] do
       collection do
         get :get_user
+        resources :job_types, only: [:index]
+        resources :skill_categories, only: [:index]
+        resources :skills, only: [:index]
       end
     end
   end

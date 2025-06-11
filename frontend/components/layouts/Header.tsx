@@ -72,7 +72,7 @@ const Header: React.FC = () => {
               }}
             >
               <MenuItem onClick={() => router.push('/user/article/create')}>記事作成</MenuItem>
-              <MenuItem onClick={() => router.push('/user/article/[user_id]/edit')}>ユーザー編集</MenuItem>
+              <MenuItem onClick={() => router.push(`/user/${user.id}/edit`)}>ユーザー編集</MenuItem>
               <MenuItem onClick={handleMenuClose}>ログアウト</MenuItem>
             </Menu>
           </>
